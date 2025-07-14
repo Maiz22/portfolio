@@ -177,7 +177,7 @@ main {
 }
 
 section {
-    margin: 60px 0;
+    margin: 60px 0 20px 0;
     max-width: 720px;
     min-height: calc(100vh - 120px);
     /*scroll-margin: 60px;*/
@@ -371,9 +371,6 @@ section h3 {
 
 /*Skills Container */
 
-.skills-container {
-}
-
 .skills {
     display: flex;
     flex-direction: column;
@@ -477,7 +474,7 @@ section h3 {
 /* Contact */
 
 #contact {
-    margin-bottom: 100px;
+    min-height: 100vh;
 }
 
 .contact-card {
@@ -646,7 +643,7 @@ input:-webkit-autofill:active {
         box-sizing: border-box;
     }
     section {
-        margin: 60px 0;
+        margin: 60px 0 20px 0;
         grid-column: 1;
         padding: 0 10px;
         width: 100%;
