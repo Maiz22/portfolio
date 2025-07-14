@@ -199,9 +199,9 @@ section h3 {
 #home {
     display: flex;
     align-items: center;
+    justify-content: center;
     padding-bottom: 64px;
     min-height: calc(100vh - 28px);
-    justify-content: center;
     font-size: 64px;
     grid-column: 2 / 12;
     max-width: 100%;
@@ -663,7 +663,7 @@ input:-webkit-autofill:active {
         width: 100vw;
         min-height: 100vh;
         min-width: 0;
-        max-width: 100vw;
+        overflow: hidden;
         box-sizing: border-box;
     }
 
@@ -966,6 +966,13 @@ input:-webkit-autofill:active {
 
 .typewriter.nocaret::after {
     border-right: 0;
+}
+
+.typewriter.inactive::before,
+.typewriter.inactive::after {
+    animation: none !important;
+    content: '' !important;
+    border-right: none !important;
 }
 
 /* needs to be reworked */
