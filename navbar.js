@@ -7,11 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const portfolioBtn = document.querySelector('#navbar-portfolio')
     const contactBtn = document.querySelector('#navbar-contact')
 
-    let navMode = 'desktop'
+    navMode = 'desktop'
     const navHome = document.querySelector('#menu-home')
     const navAbout = document.querySelector('#menu-about')
     const navProject = document.querySelector('#menu-project')
     const navContact = document.querySelector('#menu-contact')
+    changeNavbarUI(navMode, navHome, navAbout, navProject, navContact)
 
     nav.classList.add('active')
 
@@ -29,35 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     window.addEventListener('resize', () => {
-        if (window.innerWidth <= 480) {
-            if (navMode !== 'mobile') {
-                navHome.innerHTML = ''
-                navAbout.innerHTML = ''
-                navProject.innerHTML = ''
-                navContact.innerHTML = ''
-                let i = document.createElement('i')
-                i.classList.add('fa-solid', 'fa-house')
-                navHome.appendChild(i)
-                i = document.createElement('i')
-                i.classList.add('fa-solid', 'fa-user')
-                navAbout.appendChild(i)
-                i = document.createElement('i')
-                i.classList.add('fa-solid', 'fa-briefcase')
-                navProject.appendChild(i)
-                i = document.createElement('i')
-                i.classList.add('fa-solid', 'fa-envelope')
-                navContact.appendChild(i)
-                navMode = 'mobile'
-            }
-        } else {
-            if (navMode !== 'desktop') {
-                navHome.innerHTML = 'Home'
-                navAbout.innerHTML = 'About'
-                navProject.innerHTML = 'Projects'
-                navContact.innerHTML = 'Contact'
-                navMode = 'desktop'
-            }
-        }
+        changeNavbarUI(navHome, navAbout, navProject, navContact)
     })
 
     arrowUp.addEventListener('click', (e) => {
@@ -100,3 +73,35 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault()
     })
 })
+
+function changeNavbarUI(navHome, navAbout, navProject, navContact) {
+    if (window.innerWidth <= 480) {
+        if (navMode !== 'mobile') {
+            navHome.innerHTML = ''
+            navAbout.innerHTML = ''
+            navProject.innerHTML = ''
+            navContact.innerHTML = ''
+            let i = document.createElement('i')
+            i.classList.add('fa-solid', 'fa-house')
+            navHome.appendChild(i)
+            i = document.createElement('i')
+            i.classList.add('fa-solid', 'fa-user')
+            navAbout.appendChild(i)
+            i = document.createElement('i')
+            i.classList.add('fa-solid', 'fa-briefcase')
+            navProject.appendChild(i)
+            i = document.createElement('i')
+            i.classList.add('fa-solid', 'fa-envelope')
+            navContact.appendChild(i)
+            navMode = 'mobile'
+        }
+    } else {
+        if (navMode !== 'desktop') {
+            navHome.innerHTML = 'Home'
+            navAbout.innerHTML = 'About'
+            navProject.innerHTML = 'Projects'
+            navContact.innerHTML = 'Contact'
+            navMode = 'desktop'
+        }
+    }
+}
