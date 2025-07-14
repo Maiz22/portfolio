@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navAbout = document.querySelector('#menu-about')
     const navProject = document.querySelector('#menu-project')
     const navContact = document.querySelector('#menu-contact')
-    changeNavbarUI(navMode, navHome, navAbout, navProject, navContact)
+    changeNavbarUI(navHome, navAbout, navProject, navContact)
 
     nav.classList.add('active')
 
