@@ -53,7 +53,11 @@ async function getGithubRepo(owner, repo, images, index) {
         let responseText = await response.text()
         // Create the div but do not append to DOM yet
         const div = document.createElement('div')
-        div.innerHTML = marked.parse(responseText.split('##')[0])
+        if (response.status == 403 || response.status == 419) {
+            div.innerHTML = `<p>Project preview currently not be shown since the GitHub API rate limit exceeded. Please try again later.</p>`
+        } else {
+            div.innerHTML = marked.parse(responseText.split('##')[0])
+        }
         const img_container = document.createElement('div')
         img_container.classList.add('img-container')
         images.forEach((image) => {
