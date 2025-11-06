@@ -971,32 +971,3 @@ input:-webkit-autofill:active {
     content: '' !important;
     border-right: none !important;
 }
-
-/* needs to be reworked */
-
-@media (prefers-reduced-motion) {
-    .typewriter::after {
-        animation: none;
-    }
-
-    @keyframes sequencePopup {
-        0%,
-        100% {
-            content: 'developer';
-        }
-        25% {
-            content: 'writer';
-        }
-        50% {
-            content: 'reader';
-        }
-        75% {
-            content: 'human';
-        }
-    }
-
-    .typewriter::before {
-        content: 'developer';
-        animation: sequencePopup 12s linear infinite;
-    }
-}
